@@ -2,7 +2,7 @@
 
 It is the code reprository for "Joint embedding VQA model based on dynamic word vector", in which the model used a pre-trained ELMO model to replace the static word embedding commonly used by other VQA models.
 
-![basic structure of N-KBSN model](misc/N-KBSN.jpg)
+![basic structure of N-KBSN model](https://github.com/summermzy/NKBSN/blob/master/misc/N-KBSN.jpg)
 
 ## Table of Contents
 0. [Install](#Install)
