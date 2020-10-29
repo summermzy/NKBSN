@@ -6,11 +6,10 @@ It is the code reprository for "Joint embedding VQA model based on dynamic word 
 
 ## Table of Contents
 0. [Install](#Install)
-0. [Method](#Method)
-0. [Experiment setup](#Experiment-setup)
 0. [Training](#Training)
-0. [Validation and Testing](#Validation-and-Testing)
-0. [Pretrained models](#Pretrained-models)
+0. [Validation](#Validation)
+0. [Results](#Results)
+0. [Acknowledgement](#Acknowledgement)
 
 ## Install
 
@@ -160,8 +159,7 @@ We recommend to use the GPU with at least 8 GB memory, but if you don't have suc
 	
     This makes the optimizer accumulate gradients for`n` small batches and update the model weights at once. It is worth noting that  `BATCH_SIZE` must be divided by ```n``` to run this mode correctly. 
 
-
-## Validation and Testing
+## Validation
 
 **Warning**: If you train the model use ```--MODEL``` args or multi-gpu training, it should be also set in evaluation.
 
@@ -202,15 +200,17 @@ _Model_ | Parameters (M) | LSTM Size | Output Size | ELMO Size
  _ELMO(l)_|93.6|4096|512|1024|
 
  Statistics of several word vectors are shown in the table.
+ 
  _name_ | Pre-training corpus (size) | Word vector dimension | Number of word vectors 
 :-: | :-: | :-: | :-: 
  _word2vec_|Google News (100 billion words)|300|3 million|
  _Glove_|Wikipedia 2014 + Gigaword 5 (Six billion words)|300|400 thousand|
- _ELMO(s)_||256||
- _ELMO(m)_|WMT 2011 (800 million words)|512||
- _ELMO(l)_||1024||
+ _ELMO(s)_|__|256|__|
+ _ELMO(m)_|WMT 2011 (800 million words)|512| __ |
+ _ELMO(l)_| __ |1024| __ |
 
 The performance of the two models on the *Val set*  is reported as follows:
+
 _Model_ | Overall | Yes/No | Number | Other
 :-: | :-: | :-: | :-: | :-:
 _baseline(random)_ | 62.34 | 78.77 | 41.92 | 55.27| 
@@ -220,5 +220,5 @@ _N — KBSN(s)_|67.27|84.76|49.31|58.73|
 _N — KBSN(m)_|67.55|85.03|49.62|59.01|
 _N — KBSN(l)_|**67.72**|**85.22**|**49.63**|**59.20**|
 
-## Acknowlegement
+## Acknowledgement
 This project get a lot helps from the open-source MCAN-VQA project. If you are interested in the GloVe version of VQA, you can find a good example from [here.](https://github.com/MILVLG/mcan-vqa)
